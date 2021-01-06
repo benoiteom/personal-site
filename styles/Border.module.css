@@ -1,0 +1,19 @@
+#Top {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+#Bottom {
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+#Left {
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#Right {
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+}

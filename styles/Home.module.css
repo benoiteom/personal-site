@@ -88,11 +88,11 @@ div.contact > div {
 .subtitle {
 	position: absolute;
 	bottom: 60px;
-	width: 100%;
 	text-align: center;
-	width: 40px;
+	width: 80px;
 }
-  
+
+.backup:before,
 .subtitle:before {
     content: "";
     position: absolute;
@@ -106,14 +106,21 @@ div.contact > div {
     transition: .25s linear;
 }
 
+.backup:hover:before,
+.backup:focus:before,
 .subtitle:hover:before,
 .subtitle:focus:before {
     visibility: visible;
     transform: scaleX(1);
 }
 
-.link:hover {
-	cursor: pointer;
+.backup {
+	position: absolute;
+	top: calc(100vh + 60px);
+	bottom: auto;
+	left: 50vw;
+	transform: translateX(-50%);
+	transition: all 1s;
 }
 
 .link:before {
@@ -135,6 +142,7 @@ div.contact > div {
     transform: scaleX(1);
 }
 
+.backup:hover,
 .link:hover {
 	cursor: pointer;
 }
@@ -154,12 +162,19 @@ div.contact > div {
 	height: 100vh;
 }
 
-.skill {
+.skillwrapper {
 	margin: 0;
 	padding: 0;
-	width: 50%;
+	width: 50vw;
 	height: 50vh;
 	float: left;
+	background: white;
+}
+
+.skill {
+	width: 40vw;
+	height: 40vh;
+	margin: 5vh 5vw;
 	background: white;
 	flex: 1;
     display: flex;
@@ -179,8 +194,38 @@ div.contact > div {
 	background-color: white;
 }
 
-div.categories > div:hover {
-	background: lightgrey;
+.skill:hover {
+	background: rgba(0, 0, 0, .8);
+	cursor: pointer;
+}
+
+div.skill > p {
+	color: white;
+}
+
+div.skill > h1 {
+	padding-top: 101px;
+}
+
+div.skill > div:first-child {
+	margin-top: 20px;
+}
+
+.skilltype {
+	width: 320px;
+}
+
+div.skilltype > p {
+	margin-bottom: 0px;
+	color: white;
+}
+
+div.skilltype > p:first-child {
+	float: left;
+}
+
+div.skilltype > p:last-child {
+	float: right;
 }
 
 div.categories > div > h1 {

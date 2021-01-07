@@ -25,3 +25,30 @@
     left: 50vw;
     transform: translateX(-220px);
 }
+
+.slide {
+    position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: auto;
+	bottom: auto;
+	right: auto;
+	background: #7f4a88;
+	transition: all 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#one {
+    background-color: #4d606e;
+}
+#two {
+    background-color: #d3d4d8;
+    transition-delay: .5s;
+}
+#three {
+    background-color: #d3d4d8;
+    transition-delay: .22s;
+}
+#four {
+    background-color: #c06c84;
+    transition-delay: .08s;
+}

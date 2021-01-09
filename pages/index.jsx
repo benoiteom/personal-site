@@ -4,6 +4,10 @@ import borderStyles from '../styles/Border.module.css'
 import transitionStyles from '../styles/Transition.module.css'
 import React, { Component } from 'react'
 import Typewriter from 'typewriter-effect/dist/core'
+import Frontend from '../frontend.jsx'
+import Backend from '../backend.jsx'
+import Lowlevel from '../lowlevel.jsx'
+import Design from '../design.jsx'
 
 export default class Home extends Component {
 
@@ -12,10 +16,16 @@ export default class Home extends Component {
 		growin: { borderRight: '0px solid black', borderBottom: '0px solid white', pointerEvents: 'auto' },
 		contact: { opacity: 0, display: 'none' },
 		skill: { left: '-100%' },
-		skillmain: { display: 'block' },
 		skillshow: "",
 		mainshow: true,
-		backup: { opactiy: 1 }
+		backup: { opactiy: 1 },
+		color: '#d72323',
+
+		selectred: { border: '2px solid white' },
+		selectblack: { border: '2px solid white' },
+		selectpurple: { border: '2px solid white' },
+		selectgreen: { border: '2px solid white' },
+		selectblue: { border: '2px solid white' },
 	}
 
 	componentDidMount() {
@@ -25,7 +35,12 @@ export default class Home extends Component {
 			.typeString('BENOÎT ORTALO-MAGNÉ')
 			.start();
 
-		this.hideTimeout = setTimeout(() => this.setState({ fadein: { opacity: 1 }, growin: { borderRight: '120px solid black', borderBottom: '120px solid white', pointerEvents: 'auto' } }), 4200);
+		this.hideTimeout = setTimeout(() => this.setState({ 
+			fadein: { opacity: 1 },
+			growin: { borderRight: '120px solid black', borderBottom: '120px solid white', pointerEvents: 'auto' },
+			selectred: { border: '2px solid black' },
+		}), 4200);
+		document.getElementById("themecolor").style.setProperty('--theme-color', this.state.color);
 	}
 
 	componentWillUnmount() {
@@ -40,7 +55,7 @@ export default class Home extends Component {
 		});
 		setTimeout(() => {
 			this.setState({
-				fadein: {  display: 'none' },
+				fadein: { display: 'none' },
 				contact: { opactiy: 1 }
 			});
 		}, 1000);
@@ -80,21 +95,34 @@ export default class Home extends Component {
 	}
 
 	skill_transition = (val) => {
-		this.setState({ skill: { left: '100%' } });
+		if (this.state.skill.left == '100%') {
+			this.setState({ skill: { left: '-100%' } });
+		} else {
+			this.setState({ skill: { left: '100%' } });
+		}
 
 		setTimeout(() => {
-			if (val === 'frontend') {
-				this.setState({
-					skillmain: { display: 'none' },
-					skillshow: val
-				});
-			}
-		}, 1000);
+			this.setState({
+				skillshow: val
+			});
+		}, 700);
+	}
+
+	set_color = (color) => {
+		this.setState({ color: color });
+		document.getElementById("themecolor").style.setProperty('--theme-color', color);
+		this.setState({
+			selectred: { border: color == '#d72323' ? '2px solid black' : '2px solid white' },
+			selectblack: { border: color == 'black' ? '2px solid black' : '2px solid white' },
+			selectpurple: { border: color == '#5e63b6' ? '2px solid black' : '2px solid white' },
+			selectgreen: { border: color == '#08d9d6' ? '2px solid black' : '2px solid white' },
+			selectblue: { border: color == '#3490de' ? '2px solid black' : '2px solid white' },
+		});
 	}
 
 	render() {
 		return (
-			<div>
+			<div id="themecolor" className={styles.themecolor}>
 				<Head>
 					<title>Benoit Ortalo-Magne</title>
 					<link rel="icon" href="/favicon.ico" />
@@ -105,14 +133,22 @@ export default class Home extends Component {
 						<div className={styles.contact} style={this.state.contact}>
 							<h1>CONTACT</h1>
 							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} href="https://illinois.edu">Student at University of Illinois Urbana Champaign</a></p>
-							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} href="../media/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
+							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
 							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} href="https://www.linkedin.com/in/benoit-ortalo-magne/">Linkedin.com/benoit_ortalo-magne</a></p>
 							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
 							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>close</a>
 						</div>
 
 						<main className={styles.main}>
-							<div className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
+							<div className={styles.theme}>
+								<div style={this.state.selectred} onClick={() => this.set_color('#d72323')}><div style={this.state.fadein} id={styles.red} /></div>
+								<div style={this.state.selectblack} onClick={() => this.set_color('black')}><div style={this.state.fadein} id={styles.black} /></div>
+								<div style={this.state.selectpurple} onClick={() => this.set_color('#5e63b6')}><div style={this.state.fadein} id={styles.purple} /></div>
+								<div style={this.state.selectgreen} onClick={() => this.set_color('#08d9d6')}><div style={this.state.fadein} id={styles.green} /></div>
+								<div style={this.state.selectblue} onClick={() => this.set_color('#3490de')}><div style={this.state.fadein} id={styles.blue} /></div>
+								<p style={this.state.fadein}>color</p>
+							</div>
+							<div id="showcontact" className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
 							<p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p>
 							<h1 className={styles.title} id="type"></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>
@@ -121,12 +157,14 @@ export default class Home extends Component {
 					</div>
 					: null}
 
+				<div className={transitionStyles.slide} id={transitionStyles.one} style={this.state.skill} />
+				{/* <div className={transitionStyles.slide} id={transitionStyles.two} style={this.state.skill} /> */}
+				<div className={transitionStyles.slide} id={transitionStyles.three} style={this.state.skill} />
+				{/* <div className={transitionStyles.slide} id={transitionStyles.four} style={this.state.skill} /> */}
+				<div className={transitionStyles.slide} id={transitionStyles.five} style={this.state.skill} />
+
 				{this.state.skillshow == 'categories' ?
 					<div className={styles.categories} id="content">
-						<div className={transitionStyles.slide} id={transitionStyles.one} style={this.state.skill} />
-						<div className={transitionStyles.slide} id={transitionStyles.two} style={this.state.skill} />
-						<div className={transitionStyles.slide} id={transitionStyles.three} style={this.state.skill} />
-						<div className={transitionStyles.slide} id={transitionStyles.four} style={this.state.skill} />
 
 						<a className={styles.backup} style={this.state.backup} onClick={this.show_main} href="#top">back up</a>
 
@@ -142,18 +180,18 @@ export default class Home extends Component {
 							</div>
 						</div>
 						<div className={styles.skillwrapper}>
-							<div className={styles.skill} id={borderStyles.Left}>
+							<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
 								<h1>"BACKEND"</h1>
 								<div className={styles.skilltype}>
 									<p>Databases</p><p>MySQL</p>
 								</div>
 								<div className={styles.skilltype}>
-									<p>Node.JS</p><p>AWS</p>
+									<p>Node.js</p><p>AWS</p>
 								</div>
 							</div>
 						</div>
 						<div className={styles.skillwrapper}>
-							<div className={styles.skill} id={borderStyles.Right}>
+							<div className={styles.skill} id={borderStyles.Right} onClick={() => this.skill_transition("lowlevel")}>
 								<h1>"LOW LEVEL"</h1>
 								<div className={styles.skilltype}>
 									<p>Binary</p><p>C++</p>
@@ -164,7 +202,7 @@ export default class Home extends Component {
 							</div>
 						</div>
 						<div className={styles.skillwrapper}>
-							<div className={styles.skill} id={borderStyles.Top}>
+							<div className={styles.skill} id={borderStyles.Top} onClick={() => this.skill_transition("design")}>
 								<h1>"DESIGN"</h1>
 								<div className={styles.skilltype}>
 									<p>UI / UX</p><p>Material UI</p>
@@ -176,12 +214,15 @@ export default class Home extends Component {
 						</div>
 					</div>
 					: this.state.skillshow == "frontend" ?
-						<div>
-							<p>hi</p>
-							<h1 style={{ position: 'absolute', top: 'calc(100vh + 60px)', left: '60px', height: '9000px' }}>FRONTEND</h1>
-						</div>
-						:
-						null}
+						<Frontend back={this.skill_transition} color={this.state.color} />
+						: this.state.skillshow == "backend" ?
+							<Backend back={this.skill_transition} color={this.state.color} />
+							: this.state.skillshow == "lowlevel" ?
+								<Lowlevel back={this.skill_transition} color={this.state.color} />
+								: this.state.skillshow == "design" ?
+									<Design back={this.skill_transition} color={this.state.color} />
+									:
+									null}
 			</div>
 		)
 	}

@@ -1,3 +1,7 @@
+.themecolor {
+    --theme-color: #d72323;
+}
+
 .main {
     padding: 5rem 0;
     flex: 1;
@@ -72,6 +76,65 @@ div.contact > div {
 	/* text-align: center; */
 }
 
+.theme {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	transition: all 1s;
+}
+
+div.theme > div > div {
+	height: 20px;
+	width: 20px;
+	margin: 5px;
+	transition: all 1s;
+}
+
+div.theme > div:hover {
+	cursor: pointer;
+}
+
+div.theme > div {
+	height: 34px;
+	width: 34px;
+	margin: 5px;
+	border: 2px solid white;
+	border-radius: 2px;
+	transition: all .8s;
+}
+
+div.theme > p {
+	position: absolute;
+	top: 86.5px;
+	left: 50px;
+	width: 60px;
+	margin: 0;
+}
+
+#red {
+	background-color: #d72323;
+}
+
+#black {
+	background-color: black;
+	transition-delay: .3s;
+}
+
+#purple {
+	background-color: #5e63b6;
+	transition-delay: .6s;
+}
+
+#green {
+	background-color: #08d9d6;
+	transition-delay: .9s;
+}
+
+#blue {
+	background-color: #3490de;
+	transition-delay: 1.2s;
+}
+
 .title {
     margin: 0;
     line-height: 1.15;
@@ -97,10 +160,10 @@ div.contact > div {
     content: "";
     position: absolute;
     width: 100%;
-    height: 1px;
+    height: 2px;
     bottom: 0;
     left: 0;
-    background: black;
+    background: var(--theme-color, #d72323);
     visibility: hidden;
     transform: scaleX(0);
     transition: .25s linear;
@@ -127,10 +190,10 @@ div.contact > div {
     content: "";
     position: absolute;
     width: 100%;
-    height: 1px;
+    height: 2px;
     bottom: 0;
     left: 0;
-    background: white;
+    background: var(--theme-color, #d72323);
     visibility: hidden;
     transform: scaleX(0);
     transition: .25s linear;

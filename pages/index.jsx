@@ -132,10 +132,10 @@ export default class Home extends Component {
 					<div id="top">
 						<div className={styles.contact} style={this.state.contact}>
 							<h1>CONTACT</h1>
-							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} href="https://illinois.edu">Student at University of Illinois Urbana Champaign</a></p>
-							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
-							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} href="https://www.linkedin.com/in/benoit-ortalo-magne/">Linkedin.com/benoit_ortalo-magne</a></p>
-							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
+							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://ece.illinois.edu/">Student at University of Illinois Urbana Champaign</a></p>
+							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
+							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/">Linkedin.com/benoit_ortalo-magne</a></p>
+							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} target="_blank" href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
 							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>close</a>
 						</div>
 
@@ -146,7 +146,7 @@ export default class Home extends Component {
 								<div style={this.state.selectpurple} onClick={() => this.set_color('#5e63b6')}><div style={this.state.fadein} id={styles.purple} /></div>
 								<div style={this.state.selectgreen} onClick={() => this.set_color('#08d9d6')}><div style={this.state.fadein} id={styles.green} /></div>
 								<div style={this.state.selectblue} onClick={() => this.set_color('#3490de')}><div style={this.state.fadein} id={styles.blue} /></div>
-								<p style={this.state.fadein}>color</p>
+								<p style={this.state.fadein}>theme</p>
 							</div>
 							<div id="showcontact" className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
 							<p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p>

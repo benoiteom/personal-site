@@ -118,9 +118,9 @@ export default class Design extends Component {
                     </div>
                     <div style={this.state.personalsite} className={styles.explanation}>
                         <p>Developer & Designer</p>
-                        <p>The idea behind this site was to present a design that's so <b>simple</b> it's almost surprising how 
-                            intriguing it is. A <b>harsh contrast</b> that's evenly <b>balanced</b>. Using <b>white space</b> literally 
-                            to make the info pop. I had an idea to include a typing animation with a very <b>simplistic 
+                        <p>The idea behind this site was to present a design that's incredibly <b>simple</b> and yet 
+                            intriguing. A stark <b>contrast</b>, yet evenly <b>balanced</b>. Using <b>white space</b> to 
+                            literally make the info pop. I began with a typing animation on a very <b>simplistic 
                             landing page</b> and went from there. 
                         </p>
                         <i>"Simplicity is the ultimate sophistication" - Leonardo da Vinci</i>
@@ -133,8 +133,8 @@ export default class Design extends Component {
                         <p>Frontend Developer & Designer</p>
                         <p>
                             The challenge here was to take a project that had been <b>previously designed, and transform it</b> into something 
-                            I was satisfied with. This meant a lot of <b>compromises and altering instead of creating</b>. It was interesting to 
-                            see what someone else had come up with. Some of it I liked, some of it I knew needed changed.
+                            I found appealing. This involved many <b>compromises and alterations</b>, while allowing for an injection 
+                            of my own personal creative touch.
                         </p>
                     </div>
                     <div id={styles.teneez}>
@@ -143,11 +143,10 @@ export default class Design extends Component {
                     </div>
                     <div style={this.state.teneez} className={styles.explanation}>
                         <p>Co-Founder, CTO, Frontend Developer & Designer</p>
-                        <p>TENEEZ was a chance for me to <b>design with others offering input</b> and letting me know what they 
-                            liked and didn't like. The website went through <b>many iterations</b> before settling on the current 
-                            colors and design, often times per the request of team members. It was also interesting to 
-                            <b>design for the needs of the marketing team</b>. At times they would request something be added and 
-                            it was my job to fit it into the page, or <b>redesign accordingly</b>.
+                        <p>TENEEZ was a chance for me to <b>lead the design process</b> while taking into consideration 
+                            team feedback, requests and preferences. The website went through <b>many iterations</b> before 
+                            settling on the current colors and design. It was also interesting to work with the 
+                            marketing team and adapt the website according to their initiatives.
                         </p>
                         <a href="https://teneez.com/">teneez.com</a>
                     </div>

@@ -146,6 +146,7 @@ div.theme > p {
 .pronunciation {
 	padding-right: 590px;
 	transition: all 1s;
+	color: var(--theme-color, black);
 }
 
 .subtitle {
@@ -295,3 +296,7 @@ div.categories > div > h1 {
 	text-align: center;
 }
 
+
+@media only screen and (max-width: 880px) {
+
+}

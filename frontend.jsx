@@ -116,10 +116,10 @@ export default class Frontend extends Component {
                     <div style={this.state.teneez} className={styles.explanation}>
                         <p>Co-Founder, CTO, Frontend Developer & Designer</p>
                         <p>TENEEZ is a startup I co-founded with a friend in September 2019. By lending instead of selling, 
-                            we hope to make the hypest and newest sneakers available to those who normally couldn't afford them. 
+                            we hope to make the hypest sneakers affordable and accesible. 
                             My role has been to <b>lead the tech team, build the frontend, and link it to our backend.</b> The frontend 
                             is <b>React using Next.js</b> (this handles css, imports, etc), and links to a <b>Node.js backend</b>. Hosting 
-                            is done by <b>Vercel</b> because of how easily it integrates with <b>GitHub</b> which we use for version 
+                            is done by <b>Vercel</b> due to ease of integration with <b>GitHub</b> which we use for version 
                             control.
                         </p>
                         <a href="https://teneez.com/">teneez.com</a>
@@ -131,11 +131,11 @@ export default class Frontend extends Component {
                     <div style={this.state.musrover} className={styles.explanation}>
                         <p>Frontend Developer & Designer</p>
                         <p>
-                            A research project I joined in my sophmore year, the idea was to combine AI and machine learning 
-                            to create an intelligent music composition teacher. Myself and two others worked on <b>creating a web 
-                            app</b> for it where I was the frontend developer. When I joined the goal was to <b>update old components, 
-                            migrate from Angular 2 to Angular 4</b>, and build on it. A few of my tasks were to <b>redesign pages and 
-                            add a tutorial</b> to make the composition more intuitive. This site is not currently live.
+                            A UIUC research project which combines AI and machine learning 
+                            to create an intelligent music composition tool. Our team worked on <b>creating a web 
+                            app</b> for which I was the sole frontend developer. We were responsible for <b>updating old components, 
+                            migrating from Angular 2 to Angular 4</b>, and improving the web app. My tasks included <b>redesigning pages and 
+                            adding a tutorial</b> to make the composition more intuitive. This project is still in development.
                         </p>
                         </div>
                     <div id={styles.personalsite}>
@@ -144,10 +144,10 @@ export default class Frontend extends Component {
                     </div>
                     <div style={this.state.personalsite} className={styles.explanation}>
                         <p>Developer & Designer</p>
-                        <p>I hope you like it! This site is build with <b>React</b>, which has become my favorite over the years. 
-                            I'm also using <b>Next.js</b> for convenience but also speed as it gives me the option to employ <b>server 
-                            side rendering</b>. I haven't found any reason to switch from plain <b>CSS</b> so that's what I picked for 
-                            styling. Since you're already here the link below will direct you to the <b>GitHub repo</b> where you 
+                        <p>I hope you like it! This site is built with <b>React</b>, which has become my favorite framework over the years. 
+                            I am also using <b>Next.js</b> not only for convenience, but also speed which gives me the option to employ <b>server 
+                            side rendering</b>. I have yet to find a reason to switch from plain <b>CSS</b> so that is what I chose for 
+                            styling. The link below will direct you to the <b>GitHub repo</b> where you 
                             can see the source code.
                         </p>
                         <a href="https://github.com/benoiteom/personal-site">github.com/benoiteom/personal-site</a>

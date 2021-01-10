@@ -50,7 +50,7 @@ export default class Backend extends Component {
                 });
             }, 1000);
         } else if (this.state.parallelscreen.opacity == 1) {
-            curr = 'johndeere'
+            curr = 'parallel'
             this.setState({
                 parallel: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 parallelscreen: { opacity: 0 },
@@ -110,11 +110,11 @@ export default class Backend extends Component {
                     </div>
                     <div style={this.state.os} className={styles.explanation}>
                         <p>Class Project</p>
-                        <p>In my junior year, I took a class on operating systems. The final project was to <b>build an operating 
-                            system</b> from scratch. Using <b>C and x86</b>, we implemented <b>paging, a file system, I/O (mouse and 
-                            keyboard), terminal typing and scrolling, context switching, and executable files</b>. Over the course 
-                            of the semester, we had the opportunity to take a deep dive into how operating systems work and how 
-                            they're made.
+                        <p>In ECE 391, Computer Systems Engineering, I had the opportunity to delve into the inner workings 
+                            of today's systems inculding x86 assembly, drivers, and operating systems. Our final project 
+                            involved <b>building a command line operating system</b> from scratch using <b>C and x86</b>. We 
+                            implemented <b>paging, a file system, I/O (mouse and 
+                            keyboard,) terminal typing and scrolling, context switching, and executable files</b>.
                         </p>
                     </div>
                     <div id={styles.mp}>
@@ -123,9 +123,9 @@ export default class Backend extends Component {
                     </div>
                     <div style={this.state.mp} className={styles.explanation}>
                         <p>Class Project</p>
-                        <p>As a senior in computer engineering, I was able to take a class on microprocessors. We 
-                            used <b>SystemVerilog</b> along with <b>FPGA design tools</b> like <b>Quartus, and
-                            waveform simulations with ModelSim</b>. By the end of the semester, our team had implemented 
+                        <p>As a senior in Computer Engineering, I opted to take a Computer Organization and Design class. 
+                            For the final project, we used <b>SystemVerilog</b> along with <b>FPGA design tools</b> such as <b>Quartus and
+                            waveform simulations with ModelSim</b>. Our team implemented 
                             a functional <b>pipelined processor with five stages and a 4-way pipelined L1 and L2 
                             cache system</b>.
                         </p>
@@ -136,10 +136,9 @@ export default class Backend extends Component {
                     </div>
                     <div style={this.state.parallel} className={styles.explanation}>
                         <p>Class Project</p>
-                        <p>Parallel processing was an elective I chose to take because I thought it could be intersting 
-                            and I was not dissapointed. We learned about when parallel programming is useful and how to 
-                            best <b>optimize</b> code to take full advantage of it. We implemented tasks like <b>vector 
-                            addition, matrix multiply, reduction, and ended with an optimized convolution kernel.</b>
+                        <p>ECE 408 Parallel Processing proved to be an interesting tech elective. We learned how to best use 
+                            parallel programming and techniques for <b>optimizing</b> code. We implemented programs including <b>vector 
+                            addition, matrix multiplication, reduction, and finally an optimized convolution kernel.</b>
                         </p>
                     </div>
                 </div>

@@ -112,11 +112,12 @@ export default class Backend extends Component {
                     <div style={this.state.teneez} className={styles.explanation}>
                         <p>Co-Founder, CTO, Frontend Developer & Designer</p>
                         <p>TENEEZ is a startup I co-founded with a friend in September 2019. By lending instead of selling, 
-                            we hope to make the hypest and newest sneakers available to those who normally couldn't afford them. 
-                            As the frontend developer, my job extends to <b>linking the frontend with the backend</b>, and 
-                            sometimes <b>altering and writing Node.js code</b> to fit the specifications of the frontend. This has led me to dive deeper into 
+                            we hope to make the hypest sneakers affordable and accesible.  
+                            As the frontend developer, my job extends to <b>linking the frontend with the backend</b>, and <b>altering 
+                            or writing Node.js code</b> to fit the specifications of the frontend. This has led me to dive deeper into 
                             Node.js coding and what can be accomplished with it.
                         </p>
+                        <a href="https://teneez.com/">teneez.com</a>
                     </div>
                     <div id={styles.scripting}>
                         <p onClick={() => this.toggle_shown("scripting")}>SCRIPTING</p>
@@ -125,9 +126,10 @@ export default class Backend extends Component {
                     <div style={this.state.scripting} className={styles.explanation}>
                         <p>Python Scripting</p>
                         <p>I first realized the potential of scripting while working at John Deere. Since then, I have 
-                            made scripts a regular <b>part of my development process</b>. For example, I recently created a script 
-                            that adds a sneaker to the Teneez website from just a StockX url and the sizes we have. I 
-                            like <b>combining these aspects</b> of frontend and backend, it often makes things much more <b>efficient</b>.
+                            made scripts a regular <b>part of my development process</b>, such as a <b>CLI script</b> which 
+                            adds a sneaker to the Teneez website using only a StockX url and the available sizes. I 
+                            enjoy the added simplicity and efficiency of <b>combining these aspects</b> of frontend and backend
+                            scripts.
                         </p>
                     </div>
                     <div id={styles.johndeere}>
@@ -136,10 +138,10 @@ export default class Backend extends Component {
                     </div>
                     <div style={this.state.johndeere} className={styles.explanation}>
                         <p>IT Intern</p>
-                        <p>During my time at John Deere I worked on many projects. One of these involved <b>automation</b> with tools 
-                            like <b>Python</b> and <b>Jenkins</b>. Using these, I was able to accomplish tasks like <b>creating over 100 pull 
-                            requests</b> while taking my lunch break, very convenient! I moved on to automating other tasks like 
-                            properly <b>forking a branch</b> from GitHub and <b>testing</b> for the John Deere Sales Center.
+                        <p>During my time at John Deere I worked on many projects including <b>automation</b> with <b>Python, 
+                            Jenkins</b>, and other tools. Using these, I was able to accomplish tasks such as <b>creating over 100 pull 
+                            requests</b> while taking my lunch break...very convenient! I moved on to automating <b>testing</b> for 
+                            the John Deere Sales Center, properly <b>forking a branch</b> from GitHub, and other tasks.
                         </p>
                     </div>
                 </div>

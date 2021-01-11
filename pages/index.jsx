@@ -138,6 +138,8 @@ export default class Home extends Component {
 				<Head>
 					<title>Benoit Ortalo-Magne</title>
 					<link rel="icon" href="/favicon.ico" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
+					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins&display=swap" rel="stylesheet"></link>
 				</Head>
 
 				{this.state.mainshow ?

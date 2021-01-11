@@ -8,6 +8,7 @@ import Frontend from '../frontend.jsx'
 import Backend from '../backend.jsx'
 import Lowlevel from '../lowlevel.jsx'
 import Design from '../design.jsx'
+import smoothscroll from 'smoothscroll-polyfill';
 
 export default class Home extends Component {
 
@@ -31,12 +32,14 @@ export default class Home extends Component {
 
 	componentDidMount() {
 
+		smoothscroll.polyfill();
+
 		new Typewriter(document.getElementById('type'), { delay: 150 })
 			.pauseFor(500)
 			.typeString('BENOÎT ORTALO-MAGNÉ')
 			.start();
 
-		this.hideTimeout = setTimeout(() => this.setState({ 
+		this.hideTimeout = setTimeout(() => this.setState({
 			fadein: { opacity: 1 },
 			growin: { pointerEvents: 'auto' },
 			selectred: { border: '2px solid black' },
@@ -110,7 +113,7 @@ export default class Home extends Component {
 		// 	});
 		// }, 700);
 		setTimeout(() => {
-			
+
 		}, 1000);
 		setTimeout(() => {
 			this.setState({
@@ -165,7 +168,7 @@ export default class Home extends Component {
 							<div id="showcontact" className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
 							<p className={styles.contactme} style={this.state.fadein}>contact me &nbsp;-></p>
 							{/* <p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p> */}
-							<h1 className={styles.title} id="type"></h1>
+							<h1 className={styles.title} id="type" style={{ paddingTop: '14px' }}></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>
 							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main} href="#content">see more</a>
 						</main>

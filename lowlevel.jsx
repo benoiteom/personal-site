@@ -120,9 +120,10 @@ export default class Backend extends Component {
     render() {
         return (
             <div id="lowlevelthemecolor" className={styles.themecolor}>
+                <div id='content' />
                 <div className={lstyles.top} />
                 <h1 id='frontendtype' className={styles.title}></h1>
-                <div id='accordion' className={styles.dropdown}>
+                <div className={styles.dropdown}>
                     <div id={lstyles.os}>
                         <p onClick={() => this.toggle_shown("os")}>OPERATING SYSTEM</p>
                         <p onClick={() => this.toggle_shown("os")} className={styles.expand1}>expand</p>

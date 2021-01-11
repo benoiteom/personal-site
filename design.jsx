@@ -128,9 +128,10 @@ export default class Design extends Component {
     render() {
         return (
             <div id="designthemecolor" className={styles.themecolor}>
+                <div id='content' />
                 <div className={dstyles.topleft} />
                 <h1 id='frontendtype' className={styles.title} style={{color: 'white'}}></h1>
-                <div id='accordion' className={styles.dropdown}>
+                <div className={styles.dropdown}>
                     <div id={dstyles.personalsite}>
                         <p onClick={() => this.toggle_shown("personal site")}>PERSONAL SITE</p>
                         <p onClick={() => this.toggle_shown("personal site")} className={styles.expand3}>expand</p>

@@ -121,9 +121,10 @@ export default class Backend extends Component {
     render() {
         return (
             <div id="backendthemecolor" className={styles.themecolor}>
+                <div id='content' />
                 <div className={bstyles.top} />
                 <h1 id='frontendtype' className={styles.title} style={{color: 'white'}}></h1>
-                <div id='accordion' className={styles.dropdown}>
+                <div className={styles.dropdown}>
                     <div id={bstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
                         <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>

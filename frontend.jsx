@@ -126,8 +126,9 @@ export default class Frontend extends Component {
     render() {
         return (
             <div id="frontendthemecolor" className={styles.themecolor} style={{}}>
+                <div id='content' />
                 <h1 id='frontendtype' className={styles.title}></h1>
-                <div id='accordion' className={styles.dropdown}>
+                <div className={styles.dropdown}>
                     <div id={fstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
                         <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>

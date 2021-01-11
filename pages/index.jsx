@@ -32,8 +32,14 @@ export default class Home extends Component {
 
 	componentDidMount() {
 
+		if (location.href.includes('#')) {
+			window.history.replaceState({}, document.title, "/");
+		}
+
 		smoothscroll.polyfill();
 
+		window.addEventListener('resize', this.fire_on_resize);
+		
 		new Typewriter(document.getElementById('type'), { delay: 150 })
 			.pauseFor(500)
 			.typeString('BENOÎT ORTALO-MAGNÉ')
@@ -99,22 +105,8 @@ export default class Home extends Component {
 	}
 
 	skill_transition = (val) => {
-		// if (this.state.skill.left == '100%') {
-		// 	this.setState({ skill: { left: '-100%' } });
-		// } else {
-		// 	this.setState({ skill: { left: '100%' } });
-		// }
-
 		this.setState({ skill: { left: 0 } });
 
-		// setTimeout(() => {
-		// 	this.setState({
-		// 		skillshow: val
-		// 	});
-		// }, 700);
-		setTimeout(() => {
-
-		}, 1000);
 		setTimeout(() => {
 			this.setState({
 				skillshow: val
@@ -133,6 +125,14 @@ export default class Home extends Component {
 			selectgreen: { border: color == '#08d9d6' ? '2px solid black' : '2px solid white' },
 			selectblue: { border: color == '#3490de' ? '2px solid black' : '2px solid white' },
 		});
+	}
+
+	fire_on_resize = () => {
+		const url = location.href;
+		if (url.includes('#')) {
+			var top = document.getElementById(url.split('#')[1].toString()).offsetTop;
+			window.scrollTo(0, top);
+		}
 	}
 
 	render() {

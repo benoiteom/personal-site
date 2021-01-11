@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styles from './styles/Frontend.module.css'
+import styles from './styles/Skills.module.css'
+import fstyles from './styles/Frontend.module.css'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect/dist/core'
 
@@ -39,6 +40,9 @@ export default class Frontend extends Component {
                 this.setState({
                     teneez: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.musroverscreen.opacity == 1) {
             curr = 'musrover'
@@ -51,6 +55,9 @@ export default class Frontend extends Component {
                 this.setState({
                     musrover: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('musroverimage')).display === 'block') {
+                    document.getElementById('musroverimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.personalscreen.opacity == 1) {
             curr = "personal site"
@@ -63,6 +70,9 @@ export default class Frontend extends Component {
                 this.setState({
                     personalsite: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('personalsiteimage')).display === 'block') {
+                    document.getElementById('personalsiteimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         }
 
@@ -71,8 +81,11 @@ export default class Frontend extends Component {
                 this.setState({
                     teneez: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     teneezscreen: { opacity: 1 },
-                    placeholder: { opacity: 0 }
+                    placeholder: { opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         teneez: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -84,6 +97,9 @@ export default class Frontend extends Component {
                     musroverscreen: { opacity: 1 },
                     placeholder: { opacity: 0 }
                 });
+                if (window.getComputedStyle(document.getElementById('musroverimage')).display === 'block') {
+                    document.getElementById('musroverimage').setAttribute("style", "padding-top: 70%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         musrover: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -95,6 +111,9 @@ export default class Frontend extends Component {
                     personalscreen: { opacity: 1 },
                     placeholder: { opacity: 0 }
                 });
+                if (window.getComputedStyle(document.getElementById('personalsiteimage')).display === 'block') {
+                    document.getElementById('personalsiteimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         personalsite: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -106,10 +125,10 @@ export default class Frontend extends Component {
 
     render() {
         return (
-            <div id="frontendthemecolor" className={styles.themecolor}>
+            <div id="frontendthemecolor" className={styles.themecolor} style={{}}>
                 <h1 id='frontendtype' className={styles.title}></h1>
                 <div id='accordion' className={styles.dropdown}>
-                    <div id={styles.teneez}>
+                    <div id={fstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
                         <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>
                     </div>
@@ -123,22 +142,23 @@ export default class Frontend extends Component {
                             control.
                         </p>
                         <a href="https://teneez.com/">teneez.com</a>
+                        <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.musrover}>
+                    <div id={fstyles.musrover}>
                         <p onClick={() => this.toggle_shown("musrover")}>MUS-ROVER</p>
                         <p onClick={() => this.toggle_shown("musrover")} className={styles.expand2}>expand</p>
                     </div>
                     <div style={this.state.musrover} className={styles.explanation}>
                         <p>Frontend Developer & Designer</p>
-                        <p>
-                            A UIUC research project which combines AI and machine learning 
+                        <p>A UIUC research project which combines AI and machine learning 
                             to create an intelligent music composition tool. Our team worked on <b>creating a web 
                             app</b> for which I was the sole frontend developer. We were responsible for <b>updating old components, 
                             migrating from Angular 2 to Angular 4</b>, and improving the web app. My tasks included <b>redesigning pages and 
                             adding a tutorial</b> to make the composition more intuitive. This project is still in development.
                         </p>
+                        <div id="musroverimage" className={styles.mobileimage}><Image src='/Musrover.png' layout='fill' /></div>
                         </div>
-                    <div id={styles.personalsite}>
+                    <div id={fstyles.personalsite}>
                         <p onClick={() => this.toggle_shown("personal site")}>PERSONAL SITE</p>
                         <p onClick={() => this.toggle_shown("personal site")} className={styles.expand3}>expand</p>
                     </div>
@@ -151,10 +171,11 @@ export default class Frontend extends Component {
                             can see the source code.
                         </p>
                         <a href="https://github.com/benoiteom/personal-site">github.com/benoiteom/personal-site</a>
+                        <div id="personalsiteimage" className={styles.mobileimage}><Image src='/Personalsite.png' layout='fill' /></div>
                     </div>
                 </div>
                 <p id="back" onClick={() => this.props.back("categories")} className={styles.back}>back</p>
-                <div className={styles.monitor} />
+                <div className={fstyles.monitor} />
 
                 <div style={this.state.teneezscreen} className={styles.screen}>
                     <Image src="/Teneez.png" layout='fill' alt='teneez' />
@@ -165,10 +186,6 @@ export default class Frontend extends Component {
                 <div style={this.state.personalscreen} className={styles.screen}>
                     <Image src="/Personalsite.png" layout='fill' alt='personal' />
                 </div>
-                {/* <div style={this.state.placeholder} className={styles.placeholder}>
-                    <p>select a project</p>
-                </div> */}
-
             </div>
         )
     }

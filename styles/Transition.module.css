@@ -2,28 +2,32 @@
     position: absolute;
     top: calc(50vh - 60px);
     left: 50vw;
-    transform: translateX(-220px);
+    transform: translateX(-190px);
+    width: 309px;
 }
 
 #linktwo {
     position: absolute;
     top: calc(50vh - 20px);
     left: 50vw;
-    transform: translateX(-220px);
+    transform: translateX(-190px);
+    width: 302px;
 }
 
 #linkthree {
     position: absolute;
     top: calc(50vh + 20px);
     left: 50vw;
-    transform: translateX(-220px);
+    transform: translateX(-190px);
+    width: 379px;
 }
 
 #linkfour {
     position: absolute;
     top: calc(50vh + 60px);
     left: 50vw;
-    transform: translateX(-220px);
+    transform: translateX(-190px);
+    width: 309px;
 }
 
 .slide {
@@ -34,7 +38,8 @@
 	bottom: auto;
 	right: auto;
 	/* background: #7f4a88; */
-    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 1.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* transition: all 1s; */
     z-index: 100;
 }
 
@@ -56,4 +61,29 @@
 #five {
     background-color: white;
     transition-delay: .2s;
+}
+
+.longlink {
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .longlink {
+        display: none;
+    }
+    #linkone {
+        transform: translateX(-155px);
+    }
+    
+    #linktwo {
+        transform: translateX(-155px);
+    }
+    
+    #linkthree {
+        transform: translateX(-155px);
+    }
+    
+    #linkfour {
+        transform: translateX(-155px);
+    }
 }

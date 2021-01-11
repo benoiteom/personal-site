@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styles from './styles/Backend.module.css'
+import styles from './styles/Skills.module.css'
+import bstyles from './styles/Backend.module.css'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect/dist/core'
 
@@ -34,6 +35,9 @@ export default class Backend extends Component {
                 teneez: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 teneezscreen: { opacity: 0 },
             });
+            if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                document.getElementById('teneezimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+            }
             setTimeout(() => {
                 this.setState({
                     teneez: { fontSize: '0px', padding: '0 0', opacity: 0 },
@@ -49,6 +53,9 @@ export default class Backend extends Component {
                 this.setState({
                     scripting: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('scriptingimage')).display === 'block') {
+                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.johndeerescreen.opacity == 1) {
             curr = 'johndeere'
@@ -60,6 +67,9 @@ export default class Backend extends Component {
                 this.setState({
                     johndeere: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('johndeereimage')).display === 'block') {
+                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         }
 
@@ -69,6 +79,9 @@ export default class Backend extends Component {
                     teneez: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     teneezscreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         teneez: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -79,6 +92,9 @@ export default class Backend extends Component {
                     scripting: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     scriptingscreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('scriptingimage')).display === 'block') {
+                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         scripting: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -90,6 +106,9 @@ export default class Backend extends Component {
                     johndeere: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     johndeerescreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('johndeereimage')).display === 'block') {
+                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         johndeere: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -101,11 +120,11 @@ export default class Backend extends Component {
 
     render() {
         return (
-            <div id="backendthemecolor" className={styles.themecolor}>>
-                <div className={styles.top} />
-                <h1 id='frontendtype' className={styles.title}></h1>
+            <div id="backendthemecolor" className={styles.themecolor}>
+                <div className={bstyles.top} />
+                <h1 id='frontendtype' className={styles.title} style={{color: 'white'}}></h1>
                 <div id='accordion' className={styles.dropdown}>
-                    <div id={styles.teneez}>
+                    <div id={bstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
                         <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>
                     </div>
@@ -118,8 +137,9 @@ export default class Backend extends Component {
                             Node.js coding and what can be accomplished with it.
                         </p>
                         <a href="https://teneez.com/">teneez.com</a>
+                        <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.scripting}>
+                    <div id={bstyles.scripting}>
                         <p onClick={() => this.toggle_shown("scripting")}>SCRIPTING</p>
                         <p onClick={() => this.toggle_shown("scripting")} className={styles.expand2}>expand</p>
                     </div>
@@ -131,8 +151,9 @@ export default class Backend extends Component {
                             enjoy the added simplicity and efficiency of <b>combining these aspects</b> of frontend and backend
                             scripts.
                         </p>
+                        <div id="scriptingimage" className={styles.mobileimage}><Image src='/Scripting.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.johndeere}>
+                    <div id={bstyles.johndeere}>
                         <p onClick={() => this.toggle_shown("johndeere")}>JOHN DEERE</p>
                         <p onClick={() => this.toggle_shown("johndeere")} className={styles.expand2}>expand</p>
                     </div>
@@ -143,10 +164,11 @@ export default class Backend extends Component {
                             requests</b> while taking my lunch break...very convenient! I moved on to automating <b>testing</b> for 
                             the John Deere Sales Center, properly <b>forking a branch</b> from GitHub, and other tasks.
                         </p>
+                        <div id="johndeereimage" className={styles.mobileimage}><Image src='/Johndeere.png' layout='fill' /></div>
                     </div>
                 </div>
                 <p id="back" onClick={() => this.props.back("categories")} className={styles.back}>back</p>
-                <div className={styles.monitor} />
+                <div className={bstyles.monitor} />
 
                 <div style={this.state.teneezscreen} className={styles.screen}>
                     <Image src="/Teneez.png" layout='fill' alt='teneez' />

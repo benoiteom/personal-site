@@ -19,6 +19,7 @@ export default class Home extends Component {
 		skillshow: "",
 		mainshow: true,
 		backup: { opactiy: 1 },
+		// backup: { opactiy: 0 },
 		color: '#d72323',
 
 		selectred: { border: '2px solid white' },
@@ -37,7 +38,7 @@ export default class Home extends Component {
 
 		this.hideTimeout = setTimeout(() => this.setState({ 
 			fadein: { opacity: 1 },
-			growin: { borderRight: '120px solid black', borderBottom: '120px solid white', pointerEvents: 'auto' },
+			growin: { pointerEvents: 'auto' },
 			selectred: { border: '2px solid black' },
 		}), 4200);
 		document.getElementById("themecolor").style.setProperty('--theme-color', this.state.color);
@@ -64,12 +65,12 @@ export default class Home extends Component {
 	hide_contact = () => {
 		this.setState({
 			fadein: { opacity: 1, display: 'block' },
-			growin: { borderRight: '120px solid black', borderBottom: '120px solid white', pointerEvents: 'none', opacity: 1 },
+			growin: { pointerEvents: 'none', opacity: 1 },
 			contact: { opacity: 0 }
 		});
 		setTimeout(() => {
 			this.setState({
-				growin: { borderRight: '120px solid black', borderBottom: '120px solid white', pointerEvents: 'auto', opacity: 1 },
+				growin: { pointerEvents: 'auto', opacity: 1 },
 				contact: { display: 'none' }
 			});
 		}, 1500);
@@ -95,17 +96,28 @@ export default class Home extends Component {
 	}
 
 	skill_transition = (val) => {
-		if (this.state.skill.left == '100%') {
-			this.setState({ skill: { left: '-100%' } });
-		} else {
-			this.setState({ skill: { left: '100%' } });
-		}
+		// if (this.state.skill.left == '100%') {
+		// 	this.setState({ skill: { left: '-100%' } });
+		// } else {
+		// 	this.setState({ skill: { left: '100%' } });
+		// }
 
+		this.setState({ skill: { left: 0 } });
+
+		// setTimeout(() => {
+		// 	this.setState({
+		// 		skillshow: val
+		// 	});
+		// }, 700);
+		setTimeout(() => {
+			
+		}, 1000);
 		setTimeout(() => {
 			this.setState({
 				skillshow: val
 			});
-		}, 700);
+			this.setState({ skill: { left: '-100%' } });
+		}, 1250);
 	}
 
 	set_color = (color) => {
@@ -131,10 +143,10 @@ export default class Home extends Component {
 				{this.state.mainshow ?
 					<div id="top">
 						<div className={styles.contact} style={this.state.contact}>
-							<h1>CONTACT</h1>
-							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://ece.illinois.edu/">Student at University of Illinois Urbana Champaign</a></p>
+							<h1>DETAILS</h1>
+							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://ece.illinois.edu/">Computer Engineer at UIUC</a></p>
 							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
-							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/">Linkedin.com/benoit_ortalo-magne</a></p>
+							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/"><span className={transitionStyles.longlink}>Linkedin.com/</span>benoit_ortalo-magne</a></p>
 							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} target="_blank" href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
 							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>close</a>
 						</div>
@@ -149,7 +161,8 @@ export default class Home extends Component {
 								<p style={this.state.fadein}>theme</p>
 							</div>
 							<div id="showcontact" className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
-							<p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p>
+							<p className={styles.contactme} style={this.state.fadein}>contact me &nbsp;-></p>
+							{/* <p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p> */}
 							<h1 className={styles.title} id="type"></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>
 							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main} href="#content">see more</a>
@@ -157,11 +170,11 @@ export default class Home extends Component {
 					</div>
 					: null}
 
-				<div className={transitionStyles.slide} id={transitionStyles.one} style={this.state.skill} />
+				{/* <div className={transitionStyles.slide} id={transitionStyles.five} style={this.state.skill} /> */}
 				{/* <div className={transitionStyles.slide} id={transitionStyles.two} style={this.state.skill} /> */}
 				<div className={transitionStyles.slide} id={transitionStyles.three} style={this.state.skill} />
 				{/* <div className={transitionStyles.slide} id={transitionStyles.four} style={this.state.skill} /> */}
-				<div className={transitionStyles.slide} id={transitionStyles.five} style={this.state.skill} />
+				<div className={transitionStyles.slide} id={transitionStyles.one} style={this.state.skill} />
 
 				{this.state.skillshow == 'categories' ?
 					<div className={styles.categories} id="content">
@@ -183,10 +196,10 @@ export default class Home extends Component {
 							<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
 								<h1>"BACKEND"</h1>
 								<div className={styles.skilltype}>
-									<p>Databases</p><p>MySQL</p>
+									<p>Node.js</p><p>MySQL</p>
 								</div>
 								<div className={styles.skilltype}>
-									<p>Node.js</p><p>AWS</p>
+									<p>Databases</p><p>AWS</p>
 								</div>
 							</div>
 						</div>

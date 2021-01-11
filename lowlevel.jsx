@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styles from './styles/Lowlevel.module.css'
+import styles from './styles/Skills.module.css'
+import lstyles from './styles/Lowlevel.module.css'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect/dist/core'
 
@@ -37,6 +38,9 @@ export default class Backend extends Component {
                 this.setState({
                     os: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('osimage')).display === 'block') {
+                    document.getElementById('osimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.mpscreen.opacity == 1) {
             curr = 'mp'
@@ -48,6 +52,9 @@ export default class Backend extends Component {
                 this.setState({
                     mp: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('mpimage')).display === 'block') {
+                    document.getElementById('mpimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.parallelscreen.opacity == 1) {
             curr = 'parallel'
@@ -59,6 +66,9 @@ export default class Backend extends Component {
                 this.setState({
                     parallel: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('parallelimage')).display === 'block') {
+                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         }
 
@@ -68,6 +78,9 @@ export default class Backend extends Component {
                     os: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     osscreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('osimage')).display === 'block') {
+                    document.getElementById('osimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         os: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -78,6 +91,9 @@ export default class Backend extends Component {
                     mp: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     mpscreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('mpimage')).display === 'block') {
+                    document.getElementById('mpimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         mp: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -89,6 +105,9 @@ export default class Backend extends Component {
                     parallel: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     parallelscreen: { opacity: 1 },
                 });
+                if (window.getComputedStyle(document.getElementById('parallelimage')).display === 'block') {
+                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         parallel: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -101,10 +120,10 @@ export default class Backend extends Component {
     render() {
         return (
             <div id="lowlevelthemecolor" className={styles.themecolor}>
-                <div className={styles.top} />
+                <div className={lstyles.top} />
                 <h1 id='frontendtype' className={styles.title}></h1>
                 <div id='accordion' className={styles.dropdown}>
-                    <div id={styles.os}>
+                    <div id={lstyles.os}>
                         <p onClick={() => this.toggle_shown("os")}>OPERATING SYSTEM</p>
                         <p onClick={() => this.toggle_shown("os")} className={styles.expand1}>expand</p>
                     </div>
@@ -116,8 +135,9 @@ export default class Backend extends Component {
                             implemented <b>paging, a file system, I/O (mouse and 
                             keyboard,) terminal typing and scrolling, context switching, and executable files</b>.
                         </p>
+                        <div id="osimage" className={styles.mobileimage}><Image src='/Operatingsystem.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.mp}>
+                    <div id={lstyles.mp}>
                         <p onClick={() => this.toggle_shown("mp")}>MICROPROCESSOR</p>
                         <p onClick={() => this.toggle_shown("mp")} className={styles.expand2}>expand</p>
                     </div>
@@ -129,8 +149,9 @@ export default class Backend extends Component {
                             a functional <b>pipelined processor with five stages and a 4-way pipelined L1 and L2 
                             cache system</b>.
                         </p>
+                        <div id="mpimage" className={styles.mobileimage}><Image src='/Microprocessor.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.parallel}>
+                    <div id={lstyles.parallel}>
                         <p onClick={() => this.toggle_shown("parallel")}>PARALLEL</p>
                         <p onClick={() => this.toggle_shown("parallel")} className={styles.expand2}>expand</p>
                     </div>
@@ -140,10 +161,11 @@ export default class Backend extends Component {
                             parallel programming and techniques for <b>optimizing</b> code. We implemented programs including <b>vector 
                             addition, matrix multiplication, reduction, and finally an optimized convolution kernel.</b>
                         </p>
+                        <div id="parallelimage" className={styles.mobileimage}><Image src='/Parallel.png' layout='fill' /></div>
                     </div>
                 </div>
                 <p id="back" onClick={() => this.props.back("categories")} className={styles.back}>back</p>
-                <div className={styles.monitor} />
+                <div className={lstyles.monitor} />
 
                 <div style={this.state.osscreen} className={styles.screen}>
                     <Image src="/Operatingsystem.png" layout='fill' alt='operating system' />

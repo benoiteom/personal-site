@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styles from './styles/Design.module.css'
+import styles from './styles/Skills.module.css'
+import dstyles from './styles/Design.module.css'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect/dist/core'
 
@@ -41,6 +42,9 @@ export default class Design extends Component {
                 this.setState({
                     teneez: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.musroverscreen.opacity == 1) {
             curr = 'musrover'
@@ -53,6 +57,9 @@ export default class Design extends Component {
                 this.setState({
                     musrover: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('musroverimage')).display === 'block') {
+                    document.getElementById('musroverimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         } else if (this.state.personalscreen.opacity == 1) {
             curr = "personal site"
@@ -65,6 +72,9 @@ export default class Design extends Component {
                 this.setState({
                     personalsite: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
+                if (window.getComputedStyle(document.getElementById('personalsiteimage')).display === 'block') {
+                    document.getElementById('personalsiteimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                }
             }, 1000);
         }
 
@@ -75,6 +85,9 @@ export default class Design extends Component {
                     teneezscreen: { opacity: 1 },
                     placeholder: { opacity: 0 }
                 });
+                if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         teneez: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -86,6 +99,9 @@ export default class Design extends Component {
                     musroverscreen: { opacity: 1 },
                     placeholder: { opacity: 0 }
                 });
+                if (window.getComputedStyle(document.getElementById('musroverimage')).display === 'block') {
+                    document.getElementById('musroverimage').setAttribute("style", "padding-top: 70%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         musrover: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -97,6 +113,9 @@ export default class Design extends Component {
                     personalscreen: { opacity: 1 },
                     placeholder: { opacity: 0 }
                 });
+                if (window.getComputedStyle(document.getElementById('personalsiteimage')).display === 'block') {
+                    document.getElementById('personalsiteimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                }
                 setTimeout(() => {
                     this.setState({
                         personalsite: { fontSize: '16px', padding: '20px 20px', opacity: 1 },
@@ -109,10 +128,10 @@ export default class Design extends Component {
     render() {
         return (
             <div id="designthemecolor" className={styles.themecolor}>
-                <div className={styles.topleft} />
-                <h1 id='frontendtype' className={styles.title}></h1>
+                <div className={dstyles.topleft} />
+                <h1 id='frontendtype' className={styles.title} style={{color: 'white'}}></h1>
                 <div id='accordion' className={styles.dropdown}>
-                    <div id={styles.personalsite}>
+                    <div id={dstyles.personalsite}>
                         <p onClick={() => this.toggle_shown("personal site")}>PERSONAL SITE</p>
                         <p onClick={() => this.toggle_shown("personal site")} className={styles.expand3}>expand</p>
                     </div>
@@ -124,8 +143,9 @@ export default class Design extends Component {
                             landing page</b> and went from there. 
                         </p>
                         <i>"Simplicity is the ultimate sophistication" - Leonardo da Vinci</i>
+                        <div id="personalsiteimage" className={styles.mobileimage}><Image src='/Personalsite.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.musrover}>
+                    <div id={dstyles.musrover}>
                         <p onClick={() => this.toggle_shown("musrover")}>MUS-ROVER</p>
                         <p onClick={() => this.toggle_shown("musrover")} className={styles.expand2}>expand</p>
                     </div>
@@ -136,8 +156,9 @@ export default class Design extends Component {
                             I found appealing. This involved many <b>compromises and alterations</b>, while allowing for an injection 
                             of my own personal creative touch.
                         </p>
+                        <div id="musroverimage" className={styles.mobileimage}><Image src='/Musrover.png' layout='fill' /></div>
                     </div>
-                    <div id={styles.teneez}>
+                    <div id={dstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
                         <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>
                     </div>
@@ -149,14 +170,13 @@ export default class Design extends Component {
                             marketing team and adapt the website according to their initiatives.
                         </p>
                         <a href="https://teneez.com/">teneez.com</a>
+                        <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
                 </div>
                 <p id="back" onClick={() => this.props.back("categories")} className={styles.back}>back</p>
-                {/* <div className={styles.monitor} /> */}
-                <div className={styles.down} />
-                <div className={styles.left} />
-                <div className={styles.up} />
-
+                <div className={dstyles.down} />
+                <div className={dstyles.left} />
+                <div className={dstyles.up} />
 
                 <div style={this.state.teneezscreen} className={styles.screen}>
                     <Image src="/Teneez.png" layout='fill' alt='teneez' />
@@ -167,10 +187,6 @@ export default class Design extends Component {
                 <div style={this.state.personalscreen} className={styles.screen}>
                     <Image src="/Personalsite.png" layout='fill' alt='personal' />
                 </div>
-                {/* <div style={this.state.placeholder} className={styles.placeholder}>
-                    <p>select a project</p>
-                </div> */}
-
             </div>
         )
     }

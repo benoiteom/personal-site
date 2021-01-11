@@ -3,3 +3,4 @@ node_modules
 .next/static/webpack/
 .next/static/webpack/pages/
 .next/cache/
+.next/cache/images/

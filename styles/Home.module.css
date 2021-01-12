@@ -38,6 +38,10 @@
 	transition: all 1s;
 }
 
+.contactme:hover {
+	cursor: pointer;
+}
+
 .contact {
 	position: relative;
 	top: 0px;
@@ -167,6 +171,7 @@ div.theme > p {
 	transition: all 1s;
 }
 
+.contactme:before,
 .backup:before,
 .subtitle:before {
     content: "";
@@ -181,6 +186,8 @@ div.theme > p {
     transition: .25s linear;
 }
 
+.contactme:hover:before,
+.contactme:focus:before,
 .backup:hover:before,
 .backup:focus:before,
 .subtitle:hover:before,

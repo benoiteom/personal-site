@@ -153,7 +153,7 @@ export default class Home extends Component {
 							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
 							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/"><span className={transitionStyles.longlink}>Linkedin.com/</span>benoit_ortalo-magne</a></p>
 							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} target="_blank" href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
-							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>close</a>
+							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>back</a>
 						</div>
 
 						<main className={styles.main}>
@@ -166,7 +166,7 @@ export default class Home extends Component {
 								<p style={this.state.fadein}>theme</p>
 							</div>
 							<div id="showcontact" className={styles.fold} style={this.state.growin} onClick={this.show_contact} />
-							<p className={styles.contactme} style={this.state.fadein}>contact me &nbsp;-></p>
+							<p className={styles.contactme} style={this.state.fadein} onClick={this.show_contact}>contact me &nbsp;-></p>
 							{/* <p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p> */}
 							<h1 className={styles.title} id="type" style={{ paddingTop: '14px' }}></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>

@@ -12,7 +12,7 @@
 
 .dropdown {
     position: absolute;
-    top: calc(100vh + 250px);
+    top: calc(100vh + 200px);
     left: 10%;
     width: 30%;
     border: 2px solid black;
@@ -61,6 +61,14 @@ div.dropdown > div:nth-child(odd) > p:first-child {
 .explanation {
     padding: 20px 20px;
     transition: all 1s ease;
+    max-height: calc(100vh - 530px);
+    overflow-y: scroll;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.explanation::-webkit-scrollbar {
+	display: none;
 }
 
 .mobileimage {
@@ -226,8 +234,7 @@ div.explanation > a:focus:before {
         top: calc(100vh + 170px);
     }
     .explanation {
-        max-height: calc(100vh - 430px);
-        overflow-y: scroll;
+        max-height: calc(100vh - 505px);
     }
     .mobileimage {
         display: block;
@@ -247,5 +254,8 @@ div.explanation > a:focus:before {
     }
     .back {
         top: calc(200vh - 105px);
+    }
+    .explanation {
+        max-height: calc(100vh - 430px);
     }
 }

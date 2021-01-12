@@ -14,6 +14,12 @@ export default class Backend extends Component {
         osscreen: { opacity: 0 },
         mpscreen: { opacity: 0 },
         parallelscreen: { opacity: 0 },
+        osexpand: { opacity: 1 },
+        mpexpand: { opacity: 1 },
+        parallelexpand: { opacity: 1 },
+        osclose: { opacity: 0 },
+        mpclose: { opacity: 0 },
+        parallelclose: { opacity: 0 },
     }
 
     componentDidMount() {
@@ -33,13 +39,15 @@ export default class Backend extends Component {
             this.setState({
                 os: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 osscreen: { opacity: 0 },
+                osexpand: { opacity: 1, width: '80px' },
+                osclose: { opacity: 0, width: '60px' },
             });
             setTimeout(() => {
                 this.setState({
                     os: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
                 if (window.getComputedStyle(document.getElementById('osimage')).display === 'block') {
-                    document.getElementById('osimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                    document.getElementById('osimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
                 }
             }, 1000);
         } else if (this.state.mpscreen.opacity == 1) {
@@ -47,13 +55,15 @@ export default class Backend extends Component {
             this.setState({
                 mp: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 mpscreen: { opacity: 0 },
+                mpexpand: { opacity: 1, width: '80px' },
+                mpclose: { opacity: 0, width: '60px' },
             });
             setTimeout(() => {
                 this.setState({
                     mp: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
                 if (window.getComputedStyle(document.getElementById('mpimage')).display === 'block') {
-                    document.getElementById('mpimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                    document.getElementById('mpimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
                 }
             }, 1000);
         } else if (this.state.parallelscreen.opacity == 1) {
@@ -61,13 +71,15 @@ export default class Backend extends Component {
             this.setState({
                 parallel: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 parallelscreen: { opacity: 0 },
+                parallelexpand: { opacity: 1, width: '80px' },
+                parallelclose: { opacity: 0, width: '60px' },
             });
             setTimeout(() => {
                 this.setState({
                     parallel: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
                 if (window.getComputedStyle(document.getElementById('parallelimage')).display === 'block') {
-                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
                 }
             }, 1000);
         }
@@ -77,9 +89,11 @@ export default class Backend extends Component {
                 this.setState({
                     os: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     osscreen: { opacity: 1 },
+                    osexpand: { opacity: 0, width: 0 },
+                    osclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('osimage')).display === 'block') {
-                    document.getElementById('osimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                    document.getElementById('osimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -90,9 +104,11 @@ export default class Backend extends Component {
                 this.setState({
                     mp: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     mpscreen: { opacity: 1 },
+                    mpexpand: { opacity: 0, width: 0 },
+                    mpclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('mpimage')).display === 'block') {
-                    document.getElementById('mpimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                    document.getElementById('mpimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -104,9 +120,11 @@ export default class Backend extends Component {
                 this.setState({
                     parallel: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     parallelscreen: { opacity: 1 },
+                    parallelexpand: { opacity: 0, width: 0 },
+                    parallelclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('parallelimage')).display === 'block') {
-                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");;
+                    document.getElementById('parallelimage').setAttribute("style", "padding-top: 100%; margin-top: 28px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -125,8 +143,9 @@ export default class Backend extends Component {
                 <h1 id='frontendtype' className={styles.title}></h1>
                 <div className={styles.dropdown}>
                     <div id={lstyles.os}>
-                        <p onClick={() => this.toggle_shown("os")}>OPERATING SYSTEM</p>
-                        <p onClick={() => this.toggle_shown("os")} className={styles.expand1}>expand</p>
+                        <p onClick={() => this.toggle_shown("os")}>SYSTEMS</p>
+                        <p onClick={() => this.toggle_shown("os")} style={this.state.osexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("os")} style={this.state.osclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.os} className={styles.explanation}>
                         <p>Class Project</p>
@@ -139,8 +158,9 @@ export default class Backend extends Component {
                         <div id="osimage" className={styles.mobileimage}><Image src='/Operatingsystem.png' layout='fill' /></div>
                     </div>
                     <div id={lstyles.mp}>
-                        <p onClick={() => this.toggle_shown("mp")}>MICROPROCESSOR</p>
-                        <p onClick={() => this.toggle_shown("mp")} className={styles.expand2}>expand</p>
+                        <p onClick={() => this.toggle_shown("mp")}>PROCESSORS</p>
+                        <p onClick={() => this.toggle_shown("mp")} style={this.state.mpexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("mp")} style={this.state.mpclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.mp} className={styles.explanation}>
                         <p>Class Project</p>
@@ -154,7 +174,8 @@ export default class Backend extends Component {
                     </div>
                     <div id={lstyles.parallel}>
                         <p onClick={() => this.toggle_shown("parallel")}>PARALLEL</p>
-                        <p onClick={() => this.toggle_shown("parallel")} className={styles.expand2}>expand</p>
+                        <p onClick={() => this.toggle_shown("parallel")} style={this.state.parallelexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("parallel")} style={this.state.parallelclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.parallel} className={styles.explanation}>
                         <p>Class Project</p>

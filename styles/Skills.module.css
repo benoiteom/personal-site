@@ -137,17 +137,19 @@ div.explanation > a:focus:before {
     transition: all 1s;
 }
 
-.expand1 {
-    padding-right: 20px;
+.expand {
     float: right;
     position: relative;
+    transition: all 1s;
+    opacity: 0;
+    width: 80px;
 }
 
-.expand1:hover {
+.expand:hover {
     cursor: pointer;
 }
 
-.expand1:before {
+.expand:before {
     content: "";
     position: absolute;
     width: calc(100% - 20px);
@@ -160,71 +162,19 @@ div.explanation > a:focus:before {
     transition: .25s linear;
 }
 
-.expand1:hover:before,
-.expand1:focus:before {
+.expand:hover:before,
+.expand:focus:before {
     visibility: visible;
     transform: scaleX(1);
 }
 
-.expand2 {
-    padding-right: 20px;
-    float: right;
-    position: relative;
+.hideexpand {
+    opacity: 0 !important;
+    width: 0 !important;
+    padding-right: 0 !important; 
 }
 
-.expand2:hover {
-    cursor: pointer;
-}
-
-.expand2:before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 20px);
-    height: 2px;
-    bottom: 0px;
-    left: 0px;
-    background: var(--theme-color, #d72323);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: .25s linear;
-}
-
-.expand2:hover:before,
-.expand2:focus:before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-.expand3 {
-    padding-right: 20px;
-    float: right;
-    position: relative;
-}
-
-.expand3:hover {
-    cursor: pointer;
-}
-
-.expand3:before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 20px);
-    height: 2px;
-    bottom: 0px;
-    left: 0px;
-    background: var(--theme-color, #d72323);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: .25s linear;
-}
-
-.expand3:hover:before,
-.expand3:focus:before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1125px) {
     .screen {
         display: none;
     }
@@ -245,7 +195,7 @@ div.explanation > a:focus:before {
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 720px) {
     .title {
         margin-top: -20px;
     }

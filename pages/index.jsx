@@ -39,7 +39,7 @@ export default class Home extends Component {
 		smoothscroll.polyfill();
 
 		window.addEventListener('resize', this.fire_on_resize);
-		
+
 		new Typewriter(document.getElementById('type'), { delay: 150 })
 			.pauseFor(500)
 			.typeString('BENOÎT ORTALO-MAGNÉ')
@@ -198,15 +198,18 @@ export default class Home extends Component {
 							</div>
 						</div>
 						<div className={styles.skillwrapper}>
-							<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
-								<h1>"BACKEND"</h1>
-								<div className={styles.skilltype}>
-									<p>Node.js</p><p>MySQL</p>
+							{/* <Link href="/backend#content"> */}
+								{/* <a className={styles.skill} id={borderStyles.Left}> */}
+									<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
+									<h1>"BACKEND"</h1>
+									<div className={styles.skilltype}>
+										<p>Node.js</p><p>MySQL</p>
+									</div>
+									<div className={styles.skilltype}>
+										<p>Databases</p><p>AWS</p>
+									</div>
 								</div>
-								<div className={styles.skilltype}>
-									<p>Databases</p><p>AWS</p>
-								</div>
-							</div>
+							{/* </Link> */}
 						</div>
 						<div className={styles.skillwrapper}>
 							<div className={styles.skill} id={borderStyles.Right} onClick={() => this.skill_transition("lowlevel")}>

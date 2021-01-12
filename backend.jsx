@@ -15,6 +15,12 @@ export default class Backend extends Component {
         teneezscreen: { opacity: 0 },
         scriptingscreen: { opacity: 0 },
         johndeerescreen: { opacity: 0 },
+        teneezexpand: { opacity: 1 },
+        scriptingexpand: { opacity: 1 },
+        johndeereexpand: { opacity: 1 },
+        teneezclose: { opacity: 0 },
+        scriptingclose: { opacity: 0 },
+        johndeereclose: { opacity: 0 },
     }
 
     componentDidMount() {
@@ -34,9 +40,11 @@ export default class Backend extends Component {
             this.setState({
                 teneez: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 teneezscreen: { opacity: 0 },
+                teneezexpand: { opacity: 1, width: '80px' },
+                teneezclose: { opacity: 0, width: '60px' },
             });
             if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
-                document.getElementById('teneezimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                document.getElementById('teneezimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
             }
             setTimeout(() => {
                 this.setState({
@@ -48,13 +56,15 @@ export default class Backend extends Component {
             this.setState({
                 scripting: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 scriptingscreen: { opacity: 0 },
+                scriptingexpand: { opacity: 1, width: '80px' },
+                scriptingclose: { opacity: 0, width: '60px' },
             });
             setTimeout(() => {
                 this.setState({
                     scripting: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
                 if (window.getComputedStyle(document.getElementById('scriptingimage')).display === 'block') {
-                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
                 }
             }, 1000);
         } else if (this.state.johndeerescreen.opacity == 1) {
@@ -62,13 +72,15 @@ export default class Backend extends Component {
             this.setState({
                 johndeere: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                 johndeerescreen: { opacity: 0 },
+                johndeereexpand: { opacity: 1, width: '80px' },
+                johndeereclose: { opacity: 0, width: '60px' },
             });
             setTimeout(() => {
                 this.setState({
                     johndeere: { fontSize: '0px', padding: '0 0', opacity: 0 },
                 });
                 if (window.getComputedStyle(document.getElementById('johndeereimage')).display === 'block') {
-                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");;
+                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 0%; margin-top: 0px;");
                 }
             }, 1000);
         }
@@ -78,9 +90,11 @@ export default class Backend extends Component {
                 this.setState({
                     teneez: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     teneezscreen: { opacity: 1 },
+                    teneezexpand: { opacity: 0, width: 0 },
+                    teneezclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('teneezimage')).display === 'block') {
-                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                    document.getElementById('teneezimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -91,9 +105,11 @@ export default class Backend extends Component {
                 this.setState({
                     scripting: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     scriptingscreen: { opacity: 1 },
+                    scriptingexpand: { opacity: 0, width: 0 },
+                    scriptingclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('scriptingimage')).display === 'block') {
-                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                    document.getElementById('scriptingimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -105,9 +121,11 @@ export default class Backend extends Component {
                 this.setState({
                     johndeere: { fontSize: '16px', padding: '20px 20px', opacity: 0 },
                     johndeerescreen: { opacity: 1 },
+                    johndeereexpand: { opacity: 0, width: 0 },
+                    johndeereclose: { opacity: 1, width: '60px' },
                 });
                 if (window.getComputedStyle(document.getElementById('johndeereimage')).display === 'block') {
-                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");;
+                    document.getElementById('johndeereimage').setAttribute("style", "padding-top: 100%; margin-top: 35px;");
                 }
                 setTimeout(() => {
                     this.setState({
@@ -127,7 +145,8 @@ export default class Backend extends Component {
                 <div className={styles.dropdown}>
                     <div id={bstyles.teneez}>
                         <p onClick={() => this.toggle_shown("teneez")}>TENEEZ</p>
-                        <p onClick={() => this.toggle_shown("teneez")} className={styles.expand1}>expand</p>
+                        <p onClick={() => this.toggle_shown("teneez")} style={this.state.teneezexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("teneez")} style={this.state.teneezclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.teneez} className={styles.explanation}>
                         <p>Co-Founder, CTO, Frontend Developer & Designer</p>
@@ -142,7 +161,8 @@ export default class Backend extends Component {
                     </div>
                     <div id={bstyles.scripting}>
                         <p onClick={() => this.toggle_shown("scripting")}>SCRIPTING</p>
-                        <p onClick={() => this.toggle_shown("scripting")} className={styles.expand2}>expand</p>
+                        <p onClick={() => this.toggle_shown("scripting")} style={this.state.scriptingexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("scripting")} style={this.state.scriptingclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.scripting} className={styles.explanation}>
                         <p>Python Scripting</p>
@@ -156,7 +176,8 @@ export default class Backend extends Component {
                     </div>
                     <div id={bstyles.johndeere}>
                         <p onClick={() => this.toggle_shown("johndeere")}>JOHN DEERE</p>
-                        <p onClick={() => this.toggle_shown("johndeere")} className={styles.expand2}>expand</p>
+                        <p onClick={() => this.toggle_shown("johndeere")} style={this.state.johndeereexpand} className={styles.expand}>expand</p>
+                        <p onClick={() => this.toggle_shown("johndeere")} style={this.state.johndeereclose} className={styles.expand}>close</p>
                     </div>
                     <div style={this.state.johndeere} className={styles.explanation}>
                         <p>IT Intern</p>

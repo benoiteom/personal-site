@@ -53,25 +53,13 @@
 
 div.contact > h1 {
 	position: absolute;
-	top: 100px;
+	top: 50px;
 	left: 50%;
 	transform: translateX(-50%);
 	line-height: 1.15;
     font-size: 4rem;
 }
 
-div.contact > h2 {
-	color: white;
-	position: absolute;
-	top: 20px;
-	right: 75px;
-	z-index: 5;
-	font-size: 3rem;
-}
-
-div.contact > h2:hover {
-	cursor: pointer;
-}
 
 div.contact > div {
 	position: absolute;
@@ -80,6 +68,14 @@ div.contact > div {
 	transform: translate(-50%, -50%);
 	z-index: 5;
 	/* text-align: center; */
+}
+
+#closecontact {
+	position: absolute;
+	top: calc(100vh - 100px);
+	left: 50vw;
+	transform: translateX(-50%);
+	color: white;
 }
 
 .theme {
@@ -218,14 +214,6 @@ div.theme > p {
 .backup:hover,
 .link:hover {
 	cursor: pointer;
-}
-
-#closecontact {
-	position: absolute;
-	top: calc(100vh - 60px);
-	left: 50vw;
-	transform: translateX(-50%);
-	color: white;
 }
 
 .categories {

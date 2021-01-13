@@ -169,6 +169,20 @@ export default class Home extends Component {
 					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins&display=swap" rel="stylesheet"></link>
+					<script
+						async
+						src="https://www.googletagmanager.com/gtag/js?id=[G-V2BH3W76HN]"
+					/>
+					<script
+						dangerouslySetInnerHTML={{
+						__html: `
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', '[G-V2BH3W76HN]');
+							`,
+						}}
+					/>
 				</Head>
 
 				{this.state.mainshow ?

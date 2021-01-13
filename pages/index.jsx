@@ -57,6 +57,31 @@ export default class Home extends Component {
 		clearTimeout(this.hideTimeout)
 	}
 
+	set_favicon = (src) => {
+		let color = 'black';
+		switch (src) {
+			case '#d72323': color = 'red';
+				break;
+			case '#5e63b6': color = 'purple';
+				break;
+			case '#08d9d6': color = 'green';
+				break;
+			case '#3490de': color = 'blue';
+				break;
+			default: color='black'
+		}
+		var link = document.createElement('link');
+			// oldLink = document.getElementById('dynamic-favicon');
+		link.id = 'dynamic-favicon';
+		link.rel = 'shortcut icon';
+		link.href = '/' + color + '.ico';
+		console.log(link.href)
+		// if (oldLink) {
+		// 	document.head.removeChild(oldLink);
+		// }
+		document.head.appendChild(link);
+	}
+
 	show_contact = () => {
 		this.setState({
 			fadein: { opacity: 0 },
@@ -118,6 +143,7 @@ export default class Home extends Component {
 	set_color = (color) => {
 		this.setState({ color: color });
 		document.getElementById("themecolor").style.setProperty('--theme-color', color);
+		this.set_favicon(color);
 		this.setState({
 			selectred: { border: color == '#d72323' ? '2px solid black' : '2px solid white' },
 			selectblack: { border: color == 'black' ? '2px solid black' : '2px solid white' },
@@ -140,7 +166,7 @@ export default class Home extends Component {
 			<div id="themecolor" className={styles.themecolor}>
 				<Head>
 					<title>Benoit Ortalo-Magne</title>
-					<link rel="icon" href="/favicon.ico" />
+					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins&display=swap" rel="stylesheet"></link>
 				</Head>

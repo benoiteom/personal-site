@@ -75,7 +75,6 @@ export default class Home extends Component {
 		link.id = 'dynamic-favicon';
 		link.rel = 'shortcut icon';
 		link.href = '/' + color + '.ico';
-		console.log(link.href)
 		// if (oldLink) {
 		// 	document.head.removeChild(oldLink);
 		// }
@@ -172,7 +171,7 @@ export default class Home extends Component {
 					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC."></meta>
 					<script
 						async
-						src="https://www.googletagmanager.com/gtag/js?id=[G-V2BH3W76HN]"
+						src="https://www.googletagmanager.com/gtag/js?id=G-V2BH3W76HN"
 					/>
 					<script
 						dangerouslySetInnerHTML={{
@@ -180,7 +179,7 @@ export default class Home extends Component {
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
-								gtag('config', '[G-V2BH3W76HN]');
+								gtag('config', 'G-V2BH3W76HN');
 							`,
 						}}
 					/>

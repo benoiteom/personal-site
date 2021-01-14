@@ -169,6 +169,7 @@ export default class Home extends Component {
 					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins&display=swap" rel="stylesheet"></link>
+					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC."></meta>
 					<script
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=[G-V2BH3W76HN]"

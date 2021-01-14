@@ -40,6 +40,8 @@ export default class Home extends Component {
 
 		window.addEventListener('resize', this.fire_on_resize);
 
+		window.scroll({ top: '100vh', left: 0, behavior: 'smooth' });
+
 		new Typewriter(document.getElementById('type'), { delay: 150 })
 			.pauseFor(500)
 			.typeString('BENOÎT ORTALO-MAGNÉ')
@@ -109,18 +111,15 @@ export default class Home extends Component {
 		}, 1500);
 	}
 
-	hide_main = () => {
-		this.setState({ skillshow: 'categories' });
-		setTimeout(() => {
-			this.setState({
-				// mainshow: false,
-				// backup: { opacity: 1 }
-			});
-		}, 2000);
+	hide_main = async () => {
+		await this.setState({ skillshow: 'categories' });
+		window.scroll({ top: window.outerHeight, left: 0, behavior: 'smooth' });
+		var top = document.getElementById('content').offsetTop;
+		window.scrollTo(0, top);
 	}
 
 	show_main = () => {
-		// this.setState({ backup: { opacity: 0 } });
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 		setTimeout(() => {
 			this.setState({
 				skillshow: "",
@@ -154,8 +153,8 @@ export default class Home extends Component {
 
 	fire_on_resize = () => {
 		const url = location.href;
-		if (url.includes('#')) {
-			var top = document.getElementById(url.split('#')[1].toString()).offsetTop;
+		if (this.state.skillshow !== "") {
+			var top = document.getElementById('content').offsetTop;
 			window.scrollTo(0, top);
 		}
 	}
@@ -167,7 +166,7 @@ export default class Home extends Component {
 					<title>Benoit Ortalo-Magne</title>
 					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins&display=swap" rel="stylesheet"></link>
+					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
 					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC."></meta>
 					<script
 						async
@@ -210,7 +209,7 @@ export default class Home extends Component {
 							{/* <p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p> */}
 							<h1 className={styles.title} id="type" style={{ paddingTop: '14px' }}></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>
-							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main} href="#content">see more</a>
+							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main}>see more</a>
 						</main>
 					</div>
 					: null}
@@ -224,7 +223,7 @@ export default class Home extends Component {
 				{this.state.skillshow == 'categories' ?
 					<div className={styles.categories} id="content">
 
-						<a className={styles.backup} style={this.state.backup} onClick={this.show_main} href="#top">back up</a>
+						<a className={styles.backup} style={this.state.backup} onClick={this.show_main}>back up</a>
 
 						<div className={styles.skillwrapper}>
 							<div className={styles.skill} id={borderStyles.Bottom} onClick={() => this.skill_transition("frontend")}>

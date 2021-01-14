@@ -63,10 +63,6 @@
     transition-delay: .2s;
 }
 
-.longlink {
-    
-}
-
 @media only screen and (max-width: 400px) {
     .longlink {
         display: none;
@@ -87,3 +83,21 @@
         transform: translateX(-155px);
     }
 }
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+	@media only screen and (max-width: 575px) {
+		#linkone {
+            top: calc(40vh - 60px);
+        }
+        #linktwo {
+            top: calc(40vh - 20px);
+        }
+        #linkthree {
+            top: calc(40vh + 20px);
+        }
+        #linkfour {
+            top: calc(40vh + 60px);
+        }
+	}
+}}

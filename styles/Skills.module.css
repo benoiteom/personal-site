@@ -209,3 +209,15 @@ div.explanation > a:focus:before {
         max-height: calc(100vh - 430px);
     }
 }
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+    @media only screen and (max-width: 575px) {
+        .title {
+            margin-top: 20px;
+        }
+        .dropdown {
+            top: calc(100vh + 140px);
+        }
+    }
+}}

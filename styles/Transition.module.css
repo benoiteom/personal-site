@@ -4,6 +4,7 @@
     left: 50vw;
     transform: translateX(-190px);
     width: 309px;
+    font-size: 16px;
 }
 
 #linktwo {
@@ -12,6 +13,7 @@
     left: 50vw;
     transform: translateX(-190px);
     width: 302px;
+    font-size: 16px;
 }
 
 #linkthree {
@@ -20,6 +22,7 @@
     left: 50vw;
     transform: translateX(-190px);
     width: 379px;
+    font-size: 16px;
 }
 
 #linkfour {
@@ -28,6 +31,7 @@
     left: 50vw;
     transform: translateX(-190px);
     width: 309px;
+    font-size: 16px;
 }
 
 .slide {

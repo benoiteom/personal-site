@@ -38,10 +38,6 @@
 	transition: all 1s;
 }
 
-.contactme:hover {
-	cursor: pointer;
-}
-
 .contact {
 	position: relative;
 	top: 0px;
@@ -149,10 +145,6 @@ div.theme > p {
 	padding-left: 2px;
 }
 
-.subtitle:hover {
-	cursor: pointer;
-}
-
 .backup {
 	position: absolute;
 	top: calc(100vh + 60px);
@@ -206,6 +198,8 @@ div.theme > p {
     transform: scaleX(1);
 }
 
+.subtitle:hover,
+.contactme:hover,
 .backup:hover,
 .link:hover {
 	cursor: pointer;

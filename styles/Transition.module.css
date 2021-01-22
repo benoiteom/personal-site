@@ -3,8 +3,13 @@
     top: calc(50vh - 60px);
     left: 50vw;
     transform: translateX(-190px);
-    width: 309px;
+    width: 100%;
+    /* width: 309px; */
     font-size: 16px;
+}
+
+p#linkone > a:before {
+    width: 309px;
 }
 
 #linktwo {
@@ -12,8 +17,13 @@
     top: calc(50vh - 20px);
     left: 50vw;
     transform: translateX(-190px);
-    width: 302px;
+    width: 100%;
+    /* width: 302px; */
     font-size: 16px;
+}
+
+p#linktwo > a:before {
+    width: 302px;
 }
 
 #linkthree {
@@ -21,8 +31,13 @@
     top: calc(50vh + 20px);
     left: 50vw;
     transform: translateX(-190px);
-    width: 379px;
+    width: 100%;
+    /* width: 379px; */
     font-size: 16px;
+}
+
+p#linkthree > a:before {
+    width: 379px;
 }
 
 #linkfour {
@@ -30,8 +45,13 @@
     top: calc(50vh + 60px);
     left: 50vw;
     transform: translateX(-190px);
-    width: 309px;
+    width: 100%;
+    /* width: 309px; */
     font-size: 16px;
+}
+
+p#linkfour > a:before {
+    width: 309px;
 }
 
 .slide {
@@ -67,9 +87,12 @@
     transition-delay: .2s;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 460px) {
     .longlink {
         display: none;
+    }
+    p#linkthree > a:before {
+        width: 267px !important;
     }
     #linkone {
         transform: translateX(-155px);

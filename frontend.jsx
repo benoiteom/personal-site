@@ -161,7 +161,7 @@ export default class Frontend extends Component {
                             is done by <b>Vercel</b> due to ease of integration with <b>GitHub</b> which we use for version
                             control.
                         </p>
-                        <a href="https://teneez.com/">teneez.com</a>
+                        <a target="_blank" href="https://teneez.com/">teneez.com</a>
                         <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
                     <div id={fstyles.musrover}>
@@ -192,7 +192,7 @@ export default class Frontend extends Component {
                             styling. The link below will direct you to the <b>GitHub repo</b> where you
                             can see the source code.
                         </p>
-                        <a href="https://github.com/benoiteom/personal-site">github.com/benoiteom/personal-site</a>
+                        <a target="_blank" href="https://github.com/benoiteom/personal-site">github.com/benoiteom/personal-site</a>
                         <div id="personalsiteimage" className={styles.mobileimage}><Image src='/Personalsite.png' layout='fill' /></div>
                     </div>
                 </div>

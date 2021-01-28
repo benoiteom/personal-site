@@ -156,7 +156,7 @@ export default class Backend extends Component {
                             or writing Node.js code</b> to fit the specifications of the frontend. This has led me to dive deeper into 
                             Node.js coding and what can be accomplished with it.
                         </p>
-                        <a href="https://teneez.com/">teneez.com</a>
+                        <a target="_blank" href="https://teneez.com/">teneez.com</a>
                         <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
                     <div id={bstyles.scripting}>

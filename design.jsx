@@ -190,7 +190,7 @@ export default class Design extends Component {
                             settling on the current colors and design. It was also interesting to work with the 
                             marketing team and adapt the website according to their initiatives.
                         </p>
-                        <a href="https://teneez.com/">teneez.com</a>
+                        <a target="_blank" href="https://teneez.com/">teneez.com</a>
                         <div id="teneezimage" className={styles.mobileimage}><Image src='/Teneez.png' layout='fill' /></div>
                     </div>
                 </div>

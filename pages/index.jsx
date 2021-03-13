@@ -70,10 +70,10 @@ export default class Home extends Component {
 				break;
 			case '#3490de': color = 'blue';
 				break;
-			default: color='black'
+			default: color = 'black'
 		}
 		var link = document.createElement('link');
-			// oldLink = document.getElementById('dynamic-favicon');
+		// oldLink = document.getElementById('dynamic-favicon');
 		link.id = 'dynamic-favicon';
 		link.rel = 'shortcut icon';
 		link.href = '/' + color + '.ico';
@@ -167,14 +167,18 @@ export default class Home extends Component {
 					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
-					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC."></meta>
+					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
+					<meta property="og:title" content="Benoit Ortalo-Magne" />
+					<meta property="og:image" content="../OGImage.png" />
+					<meta property="og:description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
+					<meta property="og:url" content="https://benoit-om.com" />
 					<script
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-V2BH3W76HN"
 					/>
 					<script
 						dangerouslySetInnerHTML={{
-						__html: `
+							__html: `
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
@@ -238,16 +242,16 @@ export default class Home extends Component {
 						</div>
 						<div className={styles.skillwrapper}>
 							{/* <Link href="/backend#content"> */}
-								{/* <a className={styles.skill} id={borderStyles.Left}> */}
-									<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
-									<h1>"BACKEND"</h1>
-									<div className={styles.skilltype}>
-										<p>Node.js</p><p>MySQL</p>
-									</div>
-									<div className={styles.skilltype}>
-										<p>Databases</p><p>AWS</p>
-									</div>
+							{/* <a className={styles.skill} id={borderStyles.Left}> */}
+							<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
+								<h1>"BACKEND"</h1>
+								<div className={styles.skilltype}>
+									<p>Node.js</p><p>MySQL</p>
 								</div>
+								<div className={styles.skilltype}>
+									<p>Databases</p><p>AWS</p>
+								</div>
+							</div>
 							{/* </Link> */}
 						</div>
 						<div className={styles.skillwrapper}>

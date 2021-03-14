@@ -169,7 +169,7 @@ export default class Home extends Component {
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
 					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
 					<meta property="og:title" content="Benoit Ortalo-Magne" />
-					<meta property="og:image" content="../OGImage.png" />
+					<meta property="og:image" href="/OGImage.png" />
 					<meta property="og:description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
 					<meta property="og:url" content="https://benoit-om.com" />
 					<script

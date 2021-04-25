@@ -141,7 +141,7 @@ div.theme > p {
 	position: absolute;
 	bottom: 60px;
 	text-align: center;
-	width: 81px;
+	width: 100px;
 	padding-left: 2px;
 }
 
@@ -267,14 +267,14 @@ div.skilltype > p {
 	color: white;
 }
 
-div.skilltype > p:first-child {
-	float: left;
+div.skilltype > p {
 	margin-bottom: 10px;
+	text-align: center;
 }
 
-div.skilltype > p:last-child {
+/* div.skilltype > p:last-child {
 	float: right;
-}
+} */
 
 div.categories > div > h1 {
 	text-align: center;

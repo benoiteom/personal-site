@@ -4,10 +4,49 @@
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 3.2rem;
     position: absolute;
     top: calc(100vh + 60px);
     left: 10%;
+}
+
+.joursubtitle {
+    font-size: .9rem;
+    position: absolute;
+    top: calc(100vh + 210px);
+    left: 10.25%;
+    font-weight: bold;
+    color: grey;
+}
+
+.jourtext {
+    height: calc(100vh - 260px);
+    position: absolute;
+    top: calc(100vh + 260px);
+    left: 0;
+    margin: 0 10.25%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 40px;
+}
+
+/* width */
+.jourtext::-webkit-scrollbar {
+    width: 7px;
+}
+  
+  /* Track */
+.jourtext::-webkit-scrollbar-track {
+}
+   
+  /* Handle */
+.jourtext::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 50px;
+}
+
+.jourtext > p {
+    font-size: 1rem;
 }
 
 .dropdown {
@@ -24,9 +63,9 @@
 
 .back {
     position: absolute;
-    top: calc(200vh - 125px);
+    top: calc(100vh + 40px);
     margin-top: 0;
-    left: 10%;
+    left: 4%;
     z-index: 0;
 }
 
@@ -203,7 +242,8 @@ div.explanation > a:focus:before {
         top: calc(100vh + 120px);
     }
     .back {
-        top: calc(200vh - 105px);
+        top: calc(100vh + 10px);
+        left: 10%;
     }
     .explanation {
         max-height: calc(100vh - 430px);

@@ -213,7 +213,7 @@ export default class Home extends Component {
 							{/* <p className={styles.contactme} style={this.state.fadein}>contact me <span style={{ fontSize: '30px' }}>&rarr;</span></p> */}
 							<h1 className={styles.title} id="type" style={{ paddingTop: '14px' }}></h1>
 							<p className={styles.pronunciation} style={this.state.fadein}>[bənwa]</p>
-							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main}>see more</a>
+							<a className={styles.subtitle} style={this.state.fadein} onClick={this.hide_main}>see articles</a>
 						</main>
 					</div>
 					: null}
@@ -231,12 +231,9 @@ export default class Home extends Component {
 
 						<div className={styles.skillwrapper}>
 							<div className={styles.skill} id={borderStyles.Bottom} onClick={() => this.skill_transition("frontend")}>
-								<h1>"FRONTEND"</h1>
+								<h1>"SOCIAL MEDIA"</h1>
 								<div className={styles.skilltype}>
-									<p>React</p><p>JavaScript</p>
-								</div>
-								<div className={styles.skilltype}>
-									<p>HTML & CSS</p><p>Angular</p>
+									<p>and how it's changed</p>
 								</div>
 							</div>
 						</div>
@@ -244,35 +241,26 @@ export default class Home extends Component {
 							{/* <Link href="/backend#content"> */}
 							{/* <a className={styles.skill} id={borderStyles.Left}> */}
 							<div className={styles.skill} id={borderStyles.Left} onClick={() => this.skill_transition("backend")}>
-								<h1>"BACKEND"</h1>
+								<h1>"VACCINES"</h1>
 								<div className={styles.skilltype}>
-									<p>Node.js</p><p>MySQL</p>
-								</div>
-								<div className={styles.skilltype}>
-									<p>Databases</p><p>AWS</p>
+									<p>and who gets them</p>
 								</div>
 							</div>
 							{/* </Link> */}
 						</div>
 						<div className={styles.skillwrapper}>
 							<div className={styles.skill} id={borderStyles.Right} onClick={() => this.skill_transition("lowlevel")}>
-								<h1>"LOW LEVEL"</h1>
+								<h1>"NORTH KOREA"</h1>
 								<div className={styles.skilltype}>
-									<p>Binary</p><p>C++</p>
-								</div>
-								<div className={styles.skilltype}>
-									<p>Assembly</p><p>x86</p>
+									<p>and it's secrets</p>
 								</div>
 							</div>
 						</div>
 						<div className={styles.skillwrapper}>
 							<div className={styles.skill} id={borderStyles.Top} onClick={() => this.skill_transition("design")}>
-								<h1>"DESIGN"</h1>
+								<h1>"SNEAKERS"</h1>
 								<div className={styles.skilltype}>
-									<p>UI / UX</p><p>Material UI</p>
-								</div>
-								<div className={styles.skilltype}>
-									<p>Contrast</p><p>Balance</p>
+									<p>and resellers</p>
 								</div>
 							</div>
 						</div>

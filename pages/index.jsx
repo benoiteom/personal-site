@@ -20,7 +20,6 @@ export default class Home extends Component {
 		skillshow: "",
 		mainshow: true,
 		backup: { opactiy: 1 },
-		// backup: { opactiy: 0 },
 		color: '#d72323',
 
 		selectred: { border: '2px solid white' },

@@ -167,10 +167,10 @@ export default class Home extends Component {
 					<link rel="icon" href="/favicon.ico" id='dynamic-favicon' />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet"></link>
-					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
+					<meta name="description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and graduated from UIUC." />
 					<meta property="og:title" content="Benoit Ortalo-Magne" />
 					<meta property="og:image" href="/OGImage.png" />
-					<meta property="og:description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and soon graduating from UIUC." />
+					<meta property="og:description" content="Hi, I'm Benoit Ortalo-Magne. Developer, designer, computer engineer - based in the USA and graduated from UIUC." />
 					<meta property="og:url" content="https://benoit-om.com" />
 					<script
 						async
@@ -192,8 +192,8 @@ export default class Home extends Component {
 					<div id="top">
 						<div className={styles.contact} style={this.state.contact}>
 							<h1>DETAILS</h1>
-							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://ece.illinois.edu/">Computer Engineer at UIUC</a></p>
-							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Resume_beo2_sp2021.pdf" download="Resume_Benoit">Resume_beo2_sp2021.pdf</a></p>
+							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://www.tcs.com/">Software Engineer at TCS</a></p>
+							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Benoit_OrtaloMagne_Resume.pdf" download="Benoit_OrtaloMagne_Resume">Benoit_OrtaloMagne_Resume.pdf</a></p>
 							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/"><span className={transitionStyles.longlink}>Linkedin.com/</span>benoit_ortalo-magne</a></p>
 							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} target="_blank" href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
 							<a id={styles.closecontact} className={styles.link} onClick={this.hide_contact}>back</a>

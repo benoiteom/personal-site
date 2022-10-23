@@ -192,7 +192,7 @@ export default class Home extends Component {
 					<div id="top">
 						<div className={styles.contact} style={this.state.contact}>
 							<h1>DETAILS</h1>
-							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://www.tcs.com/">Software Engineer at TCS</a></p>
+							<p id={transitionStyles.linkone}>Current<span style={{ paddingLeft: '29px' }} /><a className={styles.link} target="_blank" href="https://busify.com/">Full Stack Developer at Busify</a></p>
 							<p id={transitionStyles.linktwo}>Resume<span style={{ paddingLeft: '24.5px' }} /><a className={styles.link} target="_blank" href="/Benoit_OrtaloMagne_Resume.pdf" download="Benoit_OrtaloMagne_Resume">Benoit_OrtaloMagne_Resume.pdf</a></p>
 							<p id={transitionStyles.linkthree}>LinkedIn<span style={{ paddingLeft: '25px' }} /><a className={styles.link} target="_blank" href="https://www.linkedin.com/in/benoit-ortalo-magne/"><span className={transitionStyles.longlink}>Linkedin.com/</span>benoit_ortalo-magne</a></p>
 							<p id={transitionStyles.linkfour}>Email<span style={{ paddingLeft: '46px' }} /><a className={styles.link} target="_blank" href="mailto:bortalomagne@gmail.com">bortalomagne@gmail.com</a></p>
